@@ -57,7 +57,7 @@ function doTurn(square) {
 
 
 function attachListeners() {
-  $('td').on('click', function() {  
+  $('td').on('click', function() {
     if (!checkWinner() && !$.text(this)) {
       doTurn(this)
     };
@@ -82,7 +82,7 @@ function saveGame(){
     let square = $("td")[i].innerHTML
     curr_board.push(square)
   }
-  
+
   if (gameId === 0) {
       $.post("/games", { state: curr_board }, function(game) {
         gameId = game.data.id
